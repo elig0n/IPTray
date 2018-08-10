@@ -5,4 +5,4 @@ Left click on tray icon refreshes information.
 Right click menu has an option to copy IP address to clipboard and Quit the program.  
 
 Written for Windows using Python  
-Requires win32gui module
+Requires _win32gui_ and _requests_ modules
