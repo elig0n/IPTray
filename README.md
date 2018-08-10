@@ -6,4 +6,4 @@ Right click menu has an option to copy IP address to clipboard or Quit the progr
 
 Written for Windows using Python  
 Requires _win32gui_ and _requests_ modules  
-Uses [ipify](http://www.ipify.org) API for the external IP.
+Uses [ipify](http://www.ipify.org) API for retrieving the external IP.
