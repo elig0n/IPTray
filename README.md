@@ -1,4 +1,4 @@
-# IPTray
+# ![IPTray Icon](ip.ico?raw=true) IPTray
 Shows external IP, internal IP and external hostname in a tray icon hover tooltip baloon.  
 
 Left click on tray icon refreshes information.  
