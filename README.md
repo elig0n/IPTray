@@ -1,9 +1,11 @@
 # ![IPTray Icon](ip.ico?raw=true) IPTray
-Shows external IP, internal IP and external hostname in a tray icon hover tooltip baloon.  
+System tray app that lets you easily find your internal and external IP and hostname.
 
-Left click on tray icon refreshes information.  
-Right click menu has an option to copy IP address to clipboard or Quit the program.  
+## Features
+- Hover balloon that shows external IP, external hostname and internal IP.
+- Right-click menu actions to copy each.
+- Left clicking on the tray icon refreshes information. 
 
-Written for Windows using Python  
-Requires: _win32gui_, _requests_, _pyperclip_ modules  
-Uses [ipify](http://www.ipify.org) API for retrieving the external IP.
+## Implementation
+- Written for Windows OS using win32api with Python.
+- Uses [ipify](http://www.ipify.org) API for retrieving the external IP and `socket.gethostname()` for the internal IP.
