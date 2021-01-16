@@ -4,12 +4,9 @@ from __future__ import print_function
 import socket
 from requests import get
 import pyperclip
+import os, sys
+import win32api, win32con, win32gui_struct
 
-import os
-import sys
-import win32api
-import win32con
-import win32gui_struct
 try:
     import winxpgui as win32gui
 except ImportError:
@@ -209,11 +206,11 @@ def non_string_iterable(obj):
         return not isinstance(obj, basestring)
 
 def get_ip():
-    global ext_ip, ext_host, int_ip
+    global ext_ip, ext_hst, int_ip
     int_ip = socket.gethostbyname_ex(socket.gethostname())[-1][-1]
     ext_ip = get('https://api.ipify.org').text
-    ext_host = socket.gethostbyaddr(ext_ip)[0]
-    myip = ext_ip + "\n" + ext_host + "\n" + int_ip
+    ext_hst = socket.gethostbyaddr(ext_ip)[0]
+    myip = ext_ip + "\n" + ext_hst + "\n" + int_ip
     return myip
 
 if __name__ == '__main__':
@@ -222,13 +219,16 @@ if __name__ == '__main__':
 
     def cb_ext_ip(sysTrayIcon):
         pyperclip.copy(ext_ip)
+        
+    def cb_ext_hst(sysTrayIcon):
+        pyperclip.copy(ext_hst)
 
     def cb_int_ip(sysTrayIcon):
         pyperclip.copy(int_ip)
 
     menu_options = (
                     ('Copy External IP', icon,  cb_ext_ip),
-                    ('Copy External Hostname', icon,  cb_ext_ip),
+                    ('Copy External Hostname', icon,  cb_ext_hst),
                     ('Copy Internal IP', icon,  cb_int_ip),
                    )
     global a
